@@ -99,9 +99,10 @@ local function checkUser()
             -- Itera sobre cada item na resposta
             for _, user in ipairs(trackingData) do
                 -- Depura o nome do usuário retornado
-                print("Verificando usuário: " .. user.data.username)
+                -- print("Verificando usuário: " .. user.data.username)
                 -- Verifica se o campo 'username' é igual ao currentUser
                 if user.data.username == currentUser then
+                    print(currentUser .. " = " .. user.data.username)
                     foundUser = true
                     break
                 end
