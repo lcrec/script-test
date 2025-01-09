@@ -90,12 +90,12 @@ local function checkUser()
     })
 
     if trackingResponse and trackingResponse.StatusCode == 200 then
+        -- Depurando a resposta da API
+        print("Resposta da API: " .. trackingResponse.Body)  -- Imprime a resposta completa para verificar seu formato
         local trackingData = HttpService:JSONDecode(trackingResponse.Body)
 
         if trackingData then
             local foundUser = false
-            -- Depurando a resposta da API
-            print("Resposta da API: " .. trackingResponse.Body)  -- Imprime a resposta completa para verificar seu formato
             -- Itera sobre cada item na resposta
             for _, user in ipairs(trackingData) do
                 -- Depura o nome do usuário retornado
