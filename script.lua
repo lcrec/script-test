@@ -91,7 +91,7 @@ local function checkUser()
 
     if trackingResponse and trackingResponse.StatusCode == 200 then
         -- Depurando a resposta da API
-        print("Resposta da API: " .. trackingResponse.Body)  -- Imprime a resposta completa para verificar seu formato
+        -- print("Resposta da API: " .. trackingResponse.Body)  -- Imprime a resposta completa para verificar seu formato
         local trackingData = HttpService:JSONDecode(trackingResponse.Body)
 
         if trackingData then
