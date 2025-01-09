@@ -10,6 +10,20 @@ local green = tonumber(0x00ff00)  -- Verde
 local Webhook_URL = getgenv().WebhookDiscordConfig.Url  -- URL do webhook
 local Webhook_Enabled = getgenv().WebhookDiscordConfig.Enabled  -- Se o webhook está ativado
 
+-- Verifica a disponibilidade da função 'request' ou alternativas
+local httpRequest
+if request then
+    httpRequest = request
+elseif syn and syn.request then
+    httpRequest = syn.request
+elseif fluxus and fluxus.request then
+    httpRequest = fluxus.request
+else
+    warn("Nenhuma função de requisição HTTP disponível. O envio do Webhook não será realizado.")
+    return
+end
+
+
 -- Função para enviar uma mensagem para um webhook do Discord
 local function sendWebhookMessage(webhookURL, title, description, color)
     if not Webhook_Enabled then return end
@@ -66,7 +80,7 @@ deleteFileIfExists()
 
 -- Função para fazer a requisição
 local function checkUser()
-    local trackingResponse = syn.request({
+    local trackingResponse = httpRequest({
         Url = "https://data.hermanos-dev.com/blox-fruit/data/ad7eb92c-d2a2c-46ef-ba8d-c6eeab739d52", 
         Method = 'GET',
         Headers = {
