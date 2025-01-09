@@ -7,8 +7,8 @@ local orange = tonumber(0xffa500) -- Laranja
 local green = tonumber(0x00ff00)  -- Verde
 
 -- Pegando as configurações do webhook a partir da tabela WebhookConfig
-local Webhook_URL = WebhookDiscordConfig.Url  -- URL do webhook
-local Webhook_Enabled = WebhookDiscordConfig.Enabled  -- Se o webhook está ativado
+local Webhook_URL = getgenv().WebhookDiscordConfig.Url  -- URL do webhook
+local Webhook_Enabled = getgenv().WebhookDiscordConfig.Enabled  -- Se o webhook está ativado
 
 -- Função para enviar uma mensagem para um webhook do Discord
 local function sendWebhookMessage(webhookURL, title, description, color)
