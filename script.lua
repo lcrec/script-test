@@ -134,6 +134,8 @@ end
 -- Loop a cada x segundos
 while not foundUser do
     checkUser()
+
+    print("foundUser: " .. foundUser)
     
     if foundUser then
         saveUserName()
