@@ -95,7 +95,7 @@ local function checkUser()
         local trackingData = HttpService:JSONDecode(trackingResponse.Body)
 
         if trackingData then
-            local foundUser = false
+            foundUser = false
             -- Itera sobre cada item na resposta
             for _, user in ipairs(trackingData) do
                 -- Depura o nome do usuário retornado
