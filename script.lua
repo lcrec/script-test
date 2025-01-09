@@ -135,7 +135,7 @@ end
 while not foundUser do
     checkUser()
 
-    print("foundUser: " .. foundUser)
+    print("foundUser: " .. tostring(foundUser))
     
     if foundUser then
         saveUserName()
