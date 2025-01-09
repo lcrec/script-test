@@ -81,7 +81,7 @@ deleteFileIfExists()
 -- Função para fazer a requisição
 local function checkUser()
     local trackingResponse = httpRequest({
-        Url = "https://data.hermanos-dev.com/blox-fruit/data/ad7eb92c-d2a2c-46ef-ba8d-c6eeab739d52", 
+        Url = "https://data.hermanos-dev.com/blox-fruit/data/af57b92c-d22c-46ef-ba8d-c6eeab739d52", 
         Method = 'GET',
         Headers = {
             ['content-type'] = 'application/json',
