@@ -94,8 +94,12 @@ local function checkUser()
 
         if trackingData then
             local foundUser = false
+            -- Depurando a resposta da API
+            print("Resposta da API: " .. trackingResponse.Body)  -- Imprime a resposta completa para verificar seu formato
             -- Itera sobre cada item na resposta
             for _, user in ipairs(trackingData) do
+                -- Depura o nome do usuário retornado
+                print("Verificando usuário: " .. user.username)
                 -- Verifica se o campo 'username' é igual ao currentUser
                 if user.username == currentUser then
                     foundUser = true
